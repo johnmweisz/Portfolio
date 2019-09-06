@@ -1,0 +1,54 @@
+<div class="container">
+  <div (mouseover)="getNumber()" (mouseleave)="hideNumber()" class="jumbotron">
+    <div class="row">
+        <div class="api-number col-sm text-center">
+          <h3 *ngIf="!displayNumber">Hover over this area to securely view my contact number.</h3>
+          <h3 *ngIf="displayNumber"><a href="tel:{{displayNumber}}">{{ displayNumber }}</a></h3>
+        </div>
+        <div class="pitch col-sm">
+            <p class="lead">A mobile friendly Angular .Net application might be overkill for a simple portfolio website but at least the backend api will keep my personal info safe from web crawlers...</p>
+            <hr class="my-4">
+            <p class="lead">Please use the form below to send me a direct email.</p>
+        </div>
+    </div>
+  </div>
+  <div class="api-contact" *ngIf="showContact">
+    <form #valForm='ngForm' (ngSubmit)="inquire()">
+      <div class="form-group">
+        <input class="form-control" type="text" name="Name" required minlength="6" #valName='ngModel' [(ngModel)]="Name" placeholder="Full Name  (required)">
+        <div *ngIf="valName.invalid && (valName.dirty || valName.touched)" class="alert alert-danger">
+          <div *ngIf="valName?.errors?.required">
+            <p>Full name is required.</p>
+          </div>
+          <div *ngIf="valName?.errors?.minlength">
+              <p>Full Name must be at least 6 characters long.</p>
+            </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="email" name="Email" required pattern="^[a-zA-Z0-9._-]{2,}@{1}[a-zA-Z0-9.-]{2,}\.+[a-zA-Z]{2,}$" #valEmail='ngModel' [(ngModel)]="Email" placeholder="Email (required)">
+        <div *ngIf="valEmail.invalid && (valEmail.dirty || valEmail.touched)" class="alert alert-danger">
+          <div *ngIf="valEmail?.errors?.required">
+              <p>Email is required.</p>
+          </div>
+          <div *ngIf="valEmail?.errors?.pattern">
+              <p>Please enter a valid email.</p>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="tel" name="Phone" #valPhone='ngModel' [(ngModel)]="Phone" placeholder="Phone (optional)">
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" type="text" name="Message" #valMessage='ngModel' [(ngModel)]="Message" placeholder="Message (optional)"></textarea>
+      </div>
+      <div>
+          <button class="btn btn-danger" *ngIf="!valForm.valid" type="button">Submit</button>
+          <button class="btn btn-primary" *ngIf="valForm.valid" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+  <div class="inquired" *ngIf="!showContact">
+    <p>Thank you for contacting me through the secure form, this message has gone directly to my personal email. I will get back to you shortly!</p>
+  </div>
+</div>
