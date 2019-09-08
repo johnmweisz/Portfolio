@@ -48,7 +48,7 @@ namespace Portfolio.Controllers
 
                     //SmtpClient client = new SmtpClient();
                     //client.Connect("smtp.gmail.com", 465, true);
-                    //client.Authenticate("johnmweisz@gmail.com", "xhrgwmcqnbpbfakm");
+                    //client.Authenticate("", "");
 
                     //client.Send(message);
                     //client.Disconnect(true);
