@@ -4,13 +4,10 @@
 }
 
 .django {
-  background-image: url('/assets/img/john.JPG');
+  background-image: url('/assets/img/linkedin.png');
 }
 
-.card {
-  opacity: 50%;
-}
-
-.card:hover {
-  opacity: 100%;
+.django:hover {
+  font-weight: bold;
+  background-color: white;
 }
