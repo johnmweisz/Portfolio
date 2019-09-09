@@ -1,6 +1,103 @@
 .card-title{
   margin: 0;
 }
+
 .john{
   border-radius: 10px;
+}
+
+.jumbotron:hover {
+  animation-name: swing;
+  animation-duration: 1s;
+}
+
+.card:hover {
+  transition: all 2s ease;
+  transform: rotateZ(-5deg);
+}
+
+
+.list-group-item:hover {
+  transition: all 1s ease;
+  transform: rotateY(360deg);
+  animation-name: getbold;
+  animation-duration: 1s;
+}
+
+.profile-picture:hover {
+  transition: all 1s ease;
+  transform: scale(1.1);
+}
+
+@keyframes getbold {
+  from {font-weight: normal;}
+  to {font-weight: bold;}
+}
+
+@-webkit-keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+       transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
 }

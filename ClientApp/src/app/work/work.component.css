@@ -2,6 +2,15 @@
   margin: 10px;
   min-width: 300px;
 }
+
+.django {
+  background-image: url('/assets/img/john.JPG');
+}
+
+.card {
+  opacity: 50%;
+}
+
 .card:hover {
-  font-weight: bold;
+  opacity: 100%;
 }

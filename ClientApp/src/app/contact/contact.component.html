@@ -1,12 +1,12 @@
 <div class="container">
   <div (mouseover)="getNumber()" (mouseleave)="hideNumber()" class="jumbotron">
     <div class="row">
-        <div class="api-number col-sm text-center">
+        <div class="api-number align-middle col-sm text-center">
           <h3 *ngIf="!displayNumber">Hover over this area to securely view my contact number.</h3>
           <h3 *ngIf="displayNumber"><a href="tel:{{displayNumber}}">{{ displayNumber }}</a></h3>
         </div>
         <div class="pitch col-sm">
-            <p class="lead">A mobile friendly Angular .Net application might be overkill for a simple portfolio website but at least the backend api will keep my personal info safe from web crawlers...</p>
+            <p class="lead">A mobile friendly Angular .Net application might be overkill for a simple portfolio website but at least it will keep my personal info safe from web crawlers...</p>
             <hr class="my-4">
             <p class="lead">Please use the form below to send me a direct email.</p>
         </div>
