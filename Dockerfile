@@ -1,19 +1,19 @@
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS base
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build-env
 WORKDIR /app
-EXPOSE 8000
-
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
-WORKDIR /src
-COPY ["Portfolio.csproj", "./"]
-RUN dotnet restore "./Portfolio.csproj"
-COPY . .
-WORKDIR "/src/."
-RUN dotnet build "Portfolio.csproj" -c Release -o /app/build
-
-FROM build AS publish
-RUN dotnet publish "Portfolio.csproj" -c Release -o /app/publish
-
-FROM base AS final
+# Copy csproj and restore as distinct layers
+COPY *.csproj ./
+RUN dotnet restore
+# Setup NodeJs
+RUN apt-get update && \
+    apt-get install -y wget && \
+    apt-get install -y gnupg2 && \
+    wget -qO- https://deb.nodesource.com/setup_10.x | bash - && \
+    apt-get install -y build-essential nodejs
+# Copy everything else and build
+COPY . ./
+RUN dotnet publish -c Release -o out
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "Portfolio.dll"]
