@@ -17,18 +17,10 @@
 }
 
 .list-group-item:hover {
-  transition: all 1.5s ease;
-  transform: rotateY(360deg);
-  animation-name: getbold;
-  animation-duration: 1s;
+  font-weight: bold;
 }
 
 .profile-picture:hover {
   transition: all 1s ease;
   transform: scale(1.05);
-}
-
-@keyframes getbold {
-  from {font-weight: normal;}
-  to {font-weight: bold;}
 }

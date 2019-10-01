@@ -1,5 +1,7 @@
-@media (max-width: 767px) {
-  .body-content {
-    padding-top: 50px;
-  }
+main {
+  position: relative;
+}
+
+.main-body {
+  background-image: linear-gradient(lightgray, white);
 }

@@ -25,9 +25,9 @@ import { ContactComponent } from './contact/contact.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: AboutComponent, pathMatch: 'full' },
+      { path: '', component: AboutComponent, pathMatch: 'full', data: { animation: 'isLeft' } },
       { path: 'work', component: WorkComponent, pathMatch: 'full' },
-      { path: 'contact', component: ContactComponent, pathMatch: 'full' },
+      { path: 'contact', component: ContactComponent, pathMatch: 'full', data: { animation: 'isRight' } },
     ])
   ],
   providers: [],
