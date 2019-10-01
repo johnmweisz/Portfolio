@@ -2,10 +2,6 @@
   margin: 0;
 }
 
-.john{
-  border-radius: 10px;
-}
-
 .jumbotron:hover {
   transition: all 0.5s;
   transform: scale(1.05);
@@ -18,9 +14,4 @@
 
 .list-group-item:hover {
   font-weight: bold;
-}
-
-.profile-picture:hover {
-  transition: all 1s ease;
-  transform: scale(1.05);
 }

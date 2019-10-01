@@ -7,12 +7,18 @@ using Portfolio.Models;
 using Newtonsoft.Json;
 using MailKit.Net.Smtp;
 using MimeKit;
+using Microsoft.Extensions.Configuration;
 
 namespace Portfolio.Controllers
 {
     [Route("[controller]")]
     public class HomeController : Controller
     {
+        public IConfiguration Configuration { get; }
+        public HomeController(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
         [HttpPost("[action]")]
         public IActionResult Inquire([FromBody] Contact contactform)
         {
@@ -46,13 +52,13 @@ namespace Portfolio.Controllers
 
                     message.Body = bodyBuilder.ToMessageBody();
 
-                    //SmtpClient client = new SmtpClient();
-                    //client.Connect("smtp.gmail.com", 465, true);
-                    //client.Authenticate("", "");
+                    SmtpClient client = new SmtpClient();
+                    client.Connect("smtp.gmail.com", 465, true);
+                    client.Authenticate(Configuration["EmailInfo:Email"], Configuration["EmailInfo:Password"]);
 
-                    //client.Send(message);
-                    //client.Disconnect(true);
-                    //client.Dispose();
+                    client.Send(message);
+                    client.Disconnect(true);
+                    client.Dispose();
 
                     return Ok();
                 }
