@@ -2,7 +2,7 @@
   <div (mouseover)="getNumber()" (mouseleave)="hideNumber()" class="jumbotron">
     <div class="row">
         <div class="api-number align-middle col-sm text-center align-middle">
-          <h3 *ngIf="!displayNumber">(Hover over this area to securely view my contact number.)</h3>
+          <h3 *ngIf="!displayNumber">(Hover over this area to view my contact number.)</h3>
           <h3 *ngIf="displayNumber"><a href="tel:{{displayNumber}}">Cell: {{ displayNumber }}</a></h3>
         </div>
         <div class="pitch col-sm">
