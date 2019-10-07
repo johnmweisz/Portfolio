@@ -1,15 +1,35 @@
-.jumbotron:hover {
-  transition: all 0.5s ease;
-  transform: scale(1.05);
-}
-
 .django {
   background-image: url('/assets/img/django_app.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
+
+.mean {
+  background-image: url('/assets/img/chat_app.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.fintech {
+  background-image: url('/assets/img/coming_soon.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
 .card {
-  color: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+  cursor: default;
+  color: rgba(0, 0, 0, 0.05);
+}
+
+.card a {
+  color: inherit;
+  cursor: pointer;
+}
+
+.jumbotron:hover {
+  transition: all 0.5s ease;
+  transform: scale(1.05);
 }
 
 .card:hover {
