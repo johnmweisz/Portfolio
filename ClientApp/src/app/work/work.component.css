@@ -17,8 +17,6 @@
 }
 
 .card {
-  pointer-events: none;
-  cursor: default;
   color: rgba(0, 0, 0, 0.05);
 }
 
@@ -27,12 +25,12 @@
   cursor: pointer;
 }
 
-.jumbotron:hover {
+.jumbotron:hover,.jumbotron:focus, .jumbotron:active {
   transition: all 0.5s ease;
   transform: scale(1.05);
 }
 
-.card:hover {
+.card:hover, .card:focus, .card:active {
   background-image: none;
   color: rgba(0, 0, 0, 1);
 }
