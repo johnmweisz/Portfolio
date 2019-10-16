@@ -10,14 +10,14 @@
   background-repeat: no-repeat;
 }
 
-.fintech {
+.bugtracker {
   background-image: url('/assets/img/coming_soon.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
-.card {
-  color: rgba(0, 0, 0, 0.05);
+.card-body {
+  color: rgba(0, 0, 0, 0);
 }
 
 .card a {
@@ -30,7 +30,7 @@
   transform: scale(1.05);
 }
 
-.no-touch, .card:hover, .card:focus, .card:active, .card:target {
+.no-touch, .card-body:hover, .card-body:focus, .card-body:active, .card-body:target {
   background-image: none;
   color: rgba(0, 0, 0, 1);
 }

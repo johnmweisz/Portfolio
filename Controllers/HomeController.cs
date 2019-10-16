@@ -73,7 +73,7 @@ namespace Portfolio.Controllers
             string isAuth = Request.Headers["Angular"];
             if(isAuth != null && isAuth == "secretkeylol")
             {
-            return Ok(JsonConvert.SerializeObject("949-874-0903"));
+            return Ok(JsonConvert.SerializeObject(Configuration["EmailInfo:Cell"]));
             }
             return BadRequest(401);
         }
